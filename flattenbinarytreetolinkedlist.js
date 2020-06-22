@@ -35,8 +35,8 @@ tree.addRightNode(tree.root.right, 6)
 tree.addRightNode(tree.root.left, 4)
 
 
-//O(n) solution that does a preorder search through the tree, puts all nodes
-//into an array, then iterates over the array and puts the nodes into a linked list
+//O(n) solution that does a preorder search through the tree, puts all the nodes
+//into an array, then iterates over the array and puts each node into a new linked list
 
 let arr = []
 
