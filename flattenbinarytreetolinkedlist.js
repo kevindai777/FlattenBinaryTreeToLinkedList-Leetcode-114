@@ -62,3 +62,32 @@ while (arr.length) {
 }
 
 return newNode.right
+
+
+//O(n) solution that does the changes in-place using a stack
+
+let stack = [root]
+let prev = null
+
+while (stack.length) {
+    let node = stack.pop()
+    console.log(node && node.val)
+
+    if (node) {
+
+        //Preorder traversal over the tree
+        stack.push(node.right)
+        stack.push(node.left)
+
+        //Make the previous node's right pointer the current node,
+        //it's left pointer null,
+        //and the current node's left pointer null
+        if (prev) {
+            prev.right = node
+            prev.left = null
+            node.left = null
+        }
+
+        prev = node
+    }
+}
